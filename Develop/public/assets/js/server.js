@@ -4,19 +4,18 @@ const path = require("path");
 const fs = require("fs");
 const util = require('util');
 
+// Helper method for generating unique ids
+const uuid = require('./helpers/uuid');
+
 // so we don't share our port when when we push to GitHub
 require('dotenv').config();
 
 // create .env with PORT=**** & "npm i dotenv" in node.js to protect port, OR specify PORT if .env not found:
 const PORT = process.env.PORT || 3001;
 
-// Helper method for generating unique ids
-const uuid = require('./helpers/uuid');
-
 // call the express method, assign to var "app":
 const app = express();
 
-let notes;
 
 // to serve static pages, use middleware: fcn that takes argument that calls next fcn:
     // Middleware for parsing application/json and urlencoded data
@@ -40,42 +39,43 @@ app.get('/notes', (req, res) => {
 
 
 // GET request for retrieving ALL reviews
-app.get('/api/reviews', (req, res) => {
+app.get('/api/notes', (req, res) => {
     // Log our request to the terminal
-    console.info(`${req.method} request received for tips`);
-    readFromFile('./db/tips.json').then((data) => res.json(JSON.parse(data)));
+    console.info(`${req.method} request received for notes`);
+    readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
   });
   
-  // POST Route for a new UX/UI tip
-  app.post('/api/tips', (req, res) => {
+// POST Route for a new notes
+app.post('/api/notes', (req, res) => {
     console.info(`${req.method} request received to add a tip`);
   
-    const { username, topic, tip } = req.body;
+    const { title, topic } = req.body;
   
     if (req.body) {
-      const newTip = {
-        username,
-        tip,
+      const newNote = {
+        title,
         topic,
-        tip_id: uuid(),
+        note_id: uuid(),
       };
   
-      readAndAppend(newTip, './db/tips.json');
-      res.json(`Tip added successfully 🚀`);
+      readAndAppend(newNote, './db/tips.json');
+      res.json(`Notes added successfully 🚀`);
     } else {
-      res.error('Error in adding tip');
+      res.error('Error in adding notes');
     }
   });
   
-  // GET Route for retrieving all the feedback
-  app.get('/api/feedback', (req, res) => {
+// GET Route for retrieving all the feedback
+app.get('/api/feedback', (req, res) => {
     console.info(`${req.method} request received for feedback`);
   
     readFromFile('./db/feedback.json').then((data) => res.json(JSON.parse(data)));
-  });
-  
-  // POST Route for submitting feedback
-  app.post('/api/feedback', (req, res) => {
+});
+
+
+
+// POST Route for submitting feedback
+app.post('/api/feedback', (req, res) => {
     // Log that a POST request was received
     console.info(`${req.method} request received to submit feedback`);
   
@@ -101,13 +101,13 @@ app.get('/api/reviews', (req, res) => {
   
       res.json(response);
     } else {
-      res.json('Error in posting feedback');
+      res.json('Error in posting notes');
     }
-  });
+});
   
-  app.listen(PORT, () =>
+app.listen(PORT, () =>
     console.log(`App listening at http://localhost:${PORT} 🚀`)
-  );
+);
 
 
 
