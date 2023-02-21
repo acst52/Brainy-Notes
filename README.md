@@ -3,7 +3,7 @@
 
 ## Description
 
-In this Module 11 Challenge, we are tasked to create a "Note Taker" application to write & save notes - NOT using local storage! Rather, an express.js back-end that saves and retrieves the notes from a JSON file. Now that's a brainy way to keep notes! You can access the note taker, deployed with Heroku, here: [Brainy Notes!](https://boiling-scrubland-64436.herokuapp.com/)  
+In this Module 11 Challenge, we are tasked to create a "Note Taker" application to write, save & delete notes - NOT using local storage! Rather, an express.js back-end database that saves and retrieves the notes from a JSON file. Now that's a brainy way to keep notes! You can access the note taker, deployed with Heroku, here: [Brainy Notes!](https://boiling-scrubland-64436.herokuapp.com/)  
 
 ## Table of Contents
 
