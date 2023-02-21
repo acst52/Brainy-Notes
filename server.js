@@ -38,7 +38,6 @@ app.get('/api/notes', (req, res) => {
   })
 })
 
-
 // POST Route for new notes
 app.post('/api/notes', (req, res) => {
     console.log(`${req.method} request received to add notes`);
