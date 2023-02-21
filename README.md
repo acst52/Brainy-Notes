@@ -3,7 +3,7 @@
 
 ## Description
 
-In this Module 11 Challenge, we are tasked to create a "Note Taker" application to write & save notes - NOT using local storage! Rather, an express.js back-end that saves and retrieves the notes from a JSON file. Now that's a brainy way to keep notes! You can access the note taker, hosted on Heroku, here: [FIX LINK - Brainy Notes!](https://acst52.github.io/Brainy-Notes/) 
+In this Module 11 Challenge, we are tasked to create a "Note Taker" application to write & save notes - NOT using local storage! Rather, an express.js back-end that saves and retrieves the notes from a JSON file. Now that's a brainy way to keep notes! You can access the note taker, deployed with GitHub pages, here: [Brainy Notes!](https://acst52.github.io/Brainy-Notes/)  
 
 ## Table of Contents
 
@@ -44,4 +44,5 @@ npm test
 
 If you have any questions about this project, you can contact me at acst52@gmail.com.
 
-You can find more of my work at [acst52](https://github.com/acst52/). Thanks for reading!
+You can find more of my work at [acst52](https://github.com/acst52/).
+
