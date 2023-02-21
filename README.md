@@ -44,5 +44,5 @@ npm test
 
 If you have any questions about this project, you can contact me at acst52@gmail.com.
 
-You can find more of my work at [acst52](https://github.com/acst52/).
+You can find more of my work at [acst52](https://github.com/acst52/). Thanks for reading!
 
